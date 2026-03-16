@@ -14,6 +14,7 @@ import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
 import edu.kis.powp.jobs2d.features.DriverFeature;
+import edu.kis.powp.jobs2d.features.LineTypeFeature;
 
 public class TestJobs2dPatterns {
 	private final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
@@ -50,6 +51,13 @@ public class TestJobs2dPatterns {
 		DriverFeature.updateDriverInfo();
 	}
 
+	private static void setupLineTypes(Application application){
+		LineTypeFeature.setupLinePlugin(application);
+		LineTypeFeature.addLineType("Basic Line","basic");
+		LineTypeFeature.addLineType("Dotted Line","dotted");
+		LineTypeFeature.addLineType("Special Line", "special");
+		LineTypeFeature.setCurrentLineType("basic");
+	}
 	/**
 	 * Auxiliary routines to enable using Buggy Simulator.
 	 * 
@@ -92,6 +100,7 @@ public class TestJobs2dPatterns {
 
 				DriverFeature.setupDriverPlugin(app);
 				setupDrivers(app);
+				setupLineTypes(app);
 				setupPresetTests(app);
 				setupLogger(app);
 
