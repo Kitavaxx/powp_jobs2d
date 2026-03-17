@@ -24,16 +24,7 @@ public class DrawerAdapter implements Job2dDriver {
 
 	@Override
 	public void operateTo(int x, int y) {
-		ILine line = null;
-
-		if(LineTypeFeature.getCurrentLineType().equals("basic")){
-			line = LineFactory.getBasicLine();
-		}else if(LineTypeFeature.getCurrentLineType().equals("special")){
-			line = LineFactory.getSpecialLine();
-		}else{
-			line = LineFactory.getDottedLine();
-		}
-
+		ILine line = LineFactory.getBasicLine();
 		line.setStartCoordinates(this.startX, this.startY);
 		line.setEndCoordinates(x, y);
 
