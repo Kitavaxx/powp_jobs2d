@@ -8,14 +8,14 @@ public class FiguresJane extends AbstractDriver{
         super(driver);
     }
 
-    public static void figureScript1() {
+    public void figureScript1() {
         driver.setPosition(0, 0);
         driver.operateTo(100, 100);
         driver.operateTo(200, 0);
         driver.operateTo(0, 0);
     }
 
-    public static void figureScript2() {
+    public void figureScript2() {
         driver.setPosition(50, 50);
         driver.operateTo(150, 50);
         driver.operateTo(150, 150);
