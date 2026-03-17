@@ -1,4 +1,4 @@
-package edu.kis.powp.jobs2d.drivers;
+package edu.kis.powp.jobs2d.drivers.adapter;
 
 import edu.kis.powp.jobs2d.AbstractDriver;
 import edu.kis.powp.jobs2d.Job2dDriver;
