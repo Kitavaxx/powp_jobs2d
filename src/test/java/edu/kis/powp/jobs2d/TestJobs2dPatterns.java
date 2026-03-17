@@ -30,6 +30,8 @@ public class TestJobs2dPatterns {
 
 		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
 		application.addTest("Figure Joe 2", selectTestFigureOptionListener);
+		application.addTest("Figure Jane 1", selectTestFigureOptionListener);
+		application.addTest("Figure Jane 2", selectTestFigureOptionListener);
 	}
 
 	/**
@@ -43,10 +45,11 @@ public class TestJobs2dPatterns {
 		DriverFeature.getDriverManager().setCurrentDriver(loggerDriver);
 
 		Job2dDriver testDriver = new DrawerAdapter();
-		DriverFeature.addDriver("Basic Line Driver", testDriver);
+		DriverFeature.addDriver("Drawer Driver", testDriver);
 
 		Job2dDriver testLineDriver = new LineDrawerAdapter();
-		DriverFeature.addDriver("Special Line Driver", testLineDriver);
+		DriverFeature.addDriver("Line Drawer Driver", testLineDriver);
+
 
 		DriverFeature.updateDriverInfo();
 	}
