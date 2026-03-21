@@ -15,6 +15,7 @@ import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
 import edu.kis.powp.jobs2d.features.DriverFeature;
 import edu.kis.powp.jobs2d.features.LineTypeFeature;
+import edu.kis.legacy.drawer.shape.LineFactory;
 
 public class TestJobs2dPatterns {
 	private final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
@@ -55,9 +56,9 @@ public class TestJobs2dPatterns {
 
 	private static void setupLineTypes(Application application){
 		LineTypeFeature.setupLinePlugin(application);
-		LineTypeFeature.addLineType("Basic Line","basic");
-		LineTypeFeature.addLineType("Dotted Line","dotted");
-		LineTypeFeature.addLineType("Special Line", "special");
+		LineTypeFeature.addLineType("Basic Line", "basic", LineFactory::getBasicLine);
+		LineTypeFeature.addLineType("Dotted Line","dotted", LineFactory::getDottedLine);
+		LineTypeFeature.addLineType("Special Line", "special", LineFactory::getSpecialLine);
 		LineTypeFeature.setCurrentLineType("basic");
 	}
 	/**
