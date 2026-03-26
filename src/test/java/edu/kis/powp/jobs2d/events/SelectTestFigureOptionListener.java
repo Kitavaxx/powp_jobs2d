@@ -3,6 +3,8 @@ package edu.kis.powp.jobs2d.events;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import edu.kis.powp.command.figures.CircleFigureFactory;
+import edu.kis.powp.command.figures.RectangleFigureFactory;
 import edu.kis.powp.jobs2d.drivers.DriverManager;
 import edu.kis.powp.jobs2d.drivers.adapter.AbstractDriverAdapter;
 import edu.kis.powp.jobs2d.magicpresets.FiguresJoe;
@@ -11,6 +13,8 @@ public class SelectTestFigureOptionListener implements ActionListener {
 	public final String FIGURE_JOE_1 = "Figure Joe 1";
     public final String FIGURE_JOE_2 = "Figure Joe 2";
     public final String FIGURE_JANE = "Figure Jane";
+    public final String RECTANGLE_FIGURE = "Rectangle";
+    public final String CIRCLE_FIGURE = "Circle";
 
 	private DriverManager driverManager;
 
@@ -30,6 +34,12 @@ public class SelectTestFigureOptionListener implements ActionListener {
 			case FIGURE_JANE:
 				AbstractDriverAdapter figuresJane1 = new AbstractDriverAdapter(driverManager.getCurrentDriver());
 				figuresJane1.figureScript();
+				break;
+			case RECTANGLE_FIGURE:
+				RectangleFigureFactory.createRectangle(driverManager.getCurrentDriver()).execute();
+				break;
+			case CIRCLE_FIGURE:
+				CircleFigureFactory.createCircle(driverManager.getCurrentDriver()).execute();
 				break;
 		}
 	}
